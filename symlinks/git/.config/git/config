@@ -1,0 +1,27 @@
+[core]
+	quotepath = false
+	ignorecase = false
+[user]
+	useConfigOnly = true
+[alias]
+	delete-branch-merged = !git branch --merged | egrep -v '(\\*|develop|master|main)' | xargs git branch -d
+	delete-branch-all = !git switch master && git branch | egrep -v '(\\*|develop|master|main)' | xargs git branch -D
+	aliases = !git config --get-regexp alias
+	cm = commit -m
+	ad = add -A
+	st = status
+	ps = push origin HEAD
+	cancel = reset --soft HEAD^
+	save = stash save -u
+	new = switch -c
+	amendc = commit --amend -C head
+	amendm = commit --amend -m
+	cp = cherry-pick
+[http]
+	postBuffer = 5M
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main
+[push]
+	default = current
